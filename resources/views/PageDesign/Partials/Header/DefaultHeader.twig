@@ -64,7 +64,6 @@
     </div>
 </header>
 
-<!-- breadcrumb -->
 {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
     {% include "Ceres::PageDesign.Partials.Header.Breadcrumb" %}
 {% endif %}
@@ -136,7 +135,7 @@
                                     <strong>{{ trans("Ceres::Template.headerSelectShippingCountry") }}</strong>
                                     <hr>
                                 </div>
-                                <shipping-country-select :disable-input="{{ services.template.isCheckout() | json_encode() }}"></shipping-country-select>
+                                <shipping-country-select :disable-input="{{ services.template.isCheckout() | json_data() }}"></shipping-country-select>
                             </div>
                         </div>
                     </div>
