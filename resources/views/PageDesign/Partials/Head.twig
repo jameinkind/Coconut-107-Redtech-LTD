@@ -26,46 +26,6 @@
     {% endfor %}
 {% endif %}
 
-<style data-font="Custom-Font">
-    {% set customFont =
-        {
-            regular: config('Ceres.custom-font-regular'),
-            bold: config('Ceres.custom-font-bold'),
-            italic: config('Ceres.custom-font-italic'),
-            boldItalic: config('Ceres.custom-font-bold-italic')
-        }
-    %}
-    
-    {% if customFont.regular %}
-        @font-face {
-            font-family: "Custom-Font";
-            src: url("{{ customFont.regular }}");
-        }
-    {% endif %}
-    {% if customFont.bold %}
-        @font-face {
-            font-family: "Custom-Font";
-            src: url("{{ customFont.bold }}");
-            font-weight: bold;
-        }
-    {% endif %}
-    {% if customFont.italic %}
-        @font-face {
-            font-family: "Custom-Font";
-            src: url("{{ customFont.italic }}");
-            font-style: italic;
-        }
-    {% endif %}
-    {% if customFont.boldItalic %}
-        @font-face {
-            font-family: "Custom-Font";
-            src: url("{{ customFont.boldItalic }}");
-            font-weight: bold;
-            font-style: italic;
-        }
-    {% endif %}
-</style>
-
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set logData = config("Ceres.log.data")|split(', ') %}
@@ -84,10 +44,7 @@
 
 {{ LayoutContainer.show("Ceres::Template.StyleOverwrite") }}
 
-<!-- Extend the existing style with a template -->
 {{ LayoutContainer.show("Ceres::Template.Style") }}
-
-{{ get_shop_builder_styles() }}
 
 <!--link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
 <link href="https://cdn02.plentymarkets.com/zj90a4jbte75/frontend/stylesheet-addon-redtech.css" rel="stylesheet"-->
