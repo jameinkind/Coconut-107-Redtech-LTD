@@ -7,7 +7,6 @@
 {% set topButtonPosition = config('Ceres.footer.to_top_button') %}
 
 {% set footerContainer = LayoutContainer.show("Ceres::Footer") | trim %}
-{% if footerContainer is empty %}
 
 <div class="footer">
 
@@ -19,7 +18,7 @@
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
     </div>
 
-    <div class="container-max footer-content">          
+    <div class="container footer">          
 
         {% set cat = services.category.get(config('Ceres.global.category.legal_disclosure')) %}
         <div class="copyright text-center my-3">
@@ -40,23 +39,12 @@
                 {% endautoescape %}
             </div>
         </div>
-    </div>
-</div>
-{% else %}
-    <div class="footer container-max">
-        <div class="row">
-            <div class="col clearfix">
-                {{ footerContainer | raw }}
-            </div>
+        
+        <div class="copyright">
+        <div class="container">
+        © 2019 Red Tech GmbH. Alle Rechte vorbehalten. 
+<span>Alle Preise inklusive gesetzlicher Mehrwertsteuer und zuzüglich Versandkosten.</span>
         </div>
-        <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
-            <i class="fa fa-chevron-up"></i>
         </div>
 
-        <div class="row">
-            <div class="to-top hidden-md-up" v-scroll-to-top>
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-            </div>
-        </div>
-    </div>
-{% endif %}
+</div>
