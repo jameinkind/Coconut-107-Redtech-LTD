@@ -7,6 +7,13 @@
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
 
                 <ul id="controlsList" class="controls-list list-inline">
+                    <li class="list-inline-item dropdown control-languages">
+                        <a data-toggle="collapse" href="#countrySettings" aria-expanded="false"
+                           aria-controls="countrySettings"
+                           data-parent="#controlsList">
+                            <i class="flag-icon flag-icon-{{ lang }}"></i>
+                        </a>
+                    </li>
                     <li class="list-inline-item control-user">
                         <user-login-handler>
                             <a data-toggle="modal">
@@ -20,26 +27,7 @@
                             </a>
                         </user-login-handler>
                     </li>
-                    <li class="list-inline-item dropdown control-languages">
-                        <a data-toggle="collapse" href="#countrySettings" aria-expanded="false"
-                           aria-controls="countrySettings"
-                           data-parent="#controlsList">
-                            <i class="flag-icon flag-icon-{{ lang }}"></i>
-                        </a>
-                    </li>
 
-                    {% if enableCurrencySelect == "true" %}
-                        <li class="list-inline-item dropdown control-languages">
-                            <a class=""
-                               data-toggle="collapse"
-                               href="#currencySelect"
-                               aria-expanded="false"
-                               aria-controls="currencySelect"
-                               data-parent="#controlsList">
-                                <span>{{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
-                            </a>
-                        </li>
-                    {% endif %}
                     <li class="list-inline-item control-search">
                         <a class="anicon anicon-search-xcross"
                            aria-label="toggle search"
@@ -51,16 +39,7 @@
                             <span class="anicon-search-item" aria-hidden="true"></span>
                         </a>
                     </li>
-                    {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
-                        <li class="list-inline-item control-wish-list">
-                            <wish-list-count>
-                                <a>
-                                    <span class="badge-right">0</span>
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                </a>
-                            </wish-list-count>
-                        </li>
-                    {% endif %}
+
                     <li class="list-inline-item control-basket">
                         <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                             {% if config("Ceres.header.basket_values") != "sum" %}
