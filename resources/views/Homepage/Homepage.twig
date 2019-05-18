@@ -3,33 +3,22 @@
 {% block PageBody %}
 
 <div class="container">
+
 <div class="row">
-            <div class="col-12">
-                <div class="footer-services mt-4">
-                    {% set paymentMethodContent = LayoutContainer.show("Ceres::Homepage.PaymentMethods") %}
-                    {% if paymentMethodContent|trim is not empty %}
-                        <div class="services-payment mb-3">
-                            <strong class="services-title">{{ trans("Ceres::Template.footerPaymentMethods") }}</strong>
-                            {{ paymentMethodContent }}
-                        </div>
-                    {% endif %}
-                    {% set shippingContent = LayoutContainer.show("Ceres::Homepage.Shipping") %}
-                    {% if shippingContent|trim is not empty %}
-                        <div class="services-shipping mb-3">
-                            <strong class="services-title">{{ trans("Ceres::Template.footerOrderShippedBy") }}</strong>
-                            {{ shippingContent }}
-                        </div>
-                    {% endif %}
-                    {% set certifiedContent = LayoutContainer.show("Ceres::Homepage.Certified") %}
-                    {% if certifiedContent|trim is not empty %}
-                        <div class="services-certificate mb-3">
-                            <strong class="services-title">{{ trans("Ceres::Template.footerCertifiedBy") }}</strong>
-                            {{ certifiedContent }}
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+<div class="col-12">
+<span><i class="fas fa-check"></i> schnelle Lieferzeiten</span>     
+<span><i class="fas fa-check"></i> Käuferschutz</span>
+<span><i class="fas fa-check"></i> 14 Tage Rückgaberecht</span>
+<span><i class="fas fa-check"></i> sichere Zahlung durch SSL-Verschlüsselung</span>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<img src="https://cdn02.plentymarkets.com/zj90a4jbte75/frontend/slide_01_redtech.jpg" alt="Red Tech">
+</div>
+</div>
+
 
 </div>
 
