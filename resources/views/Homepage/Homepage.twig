@@ -2,24 +2,37 @@
 
 {% block PageBody %}
 
-<div class="container">
-
-<div class="row features">
+<section class="row features container">
 <div class="col-12">
 <span><i class="fas fa-check"></i> schnelle Lieferzeiten</span>     
 <span><i class="fas fa-check"></i> Käuferschutz</span>
 <span><i class="fas fa-check"></i> 14 Tage Rückgaberecht</span>
 <span><i class="fas fa-check"></i> sichere Zahlung durch SSL-Verschlüsselung</span>
 </div>
-</div>
+</section
 
-<div class="row">
+<section class="row container">
 <div class="col-12">
 <img src="https://cdn02.plentymarkets.com/zj90a4jbte75/frontend/slide_01_redtech.jpg" alt="Red Tech">
 </div>
-</div>
+</section>
 
-
+<section class="row features container">
+<div class="col-12">
+<div class="col-2"><img src="" alt="">Smartphones</div>
+<div class="col-2"><img src="" alt="">Smartwatches</div>
+<div class="col-2"><img src="" alt="">Tablets</div>
+<div class="col-2"><img src="" alt="">Desktop-PCs</div>
+<div class="col-2"><img src="" alt="">Spielkonsolen</div>
+<div class="col-2"><img src="" alt="">LED-/LCD-TV</div>
 </div>
+</section>
+
+<section class="productlisting container">
+   {{ LayoutContainer.show("Ceres::Homepage.Container1") }}
+</section>
+<section class="productlisting container">
+   {{ LayoutContainer.show("Ceres::Homepage.Container2") }}
+</section>
 
 {% endblock %}
