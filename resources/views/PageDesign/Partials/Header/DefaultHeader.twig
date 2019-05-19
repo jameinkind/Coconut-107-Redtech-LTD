@@ -1,9 +1,7 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 <header id="page-header" class="top-bar fixed-top">
-    <div>
-        <div class="container-max">
-            <div class="row mx-0">
+        <div class="container">
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
 
                 <ul id="controlsList" class="controls-list list-inline">
@@ -49,7 +47,6 @@
 
                 </ul>
             </div>
-        </div>
         {% include "CeresCoconut::PageDesign.Partials.Header.Navigation" %}
         
         <div id="searchBox" class="cmp cmp-search-box collapse">
@@ -61,44 +58,13 @@
             {% endif %}
         </div>
         
-    </div>
 </header>
 
 {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
     {% include "Ceres::PageDesign.Partials.Header.Breadcrumb" %}
 {% endif %}
 
-<div class="container-max page-header">
-    <div class="row mx-0">
-
-        {% if enableCurrencySelect == "true" %}
-            <div id="currencySelect" class="cmp cmp-currency-select collapse">
-                <div class="container-max">
-                    <div class="row py-3">
-
-                        <div class="currency-list col-12">
-                            <div class="list-title">
-                                <strong>{{ trans("Ceres::Template.headerCurrency") }}</strong>
-                                <hr>
-                            </div>
-                            <ul class="text-center text-sm-left">
-                                {% for currency in services.checkout.getCurrencyList() if currency.name in activeCurrencies or activeCurrencies[0] == 'all' or currency.name == services.checkout.getCurrencyData().name %}
-                                    <li{% if currency.name == services.checkout.getCurrencyData().name %} class="active"{% endif %}>
-                                        <a href="{{ queryString({"currency": currency.name}) }}" rel="nofollow">
-                                            {% if currencyFormatSelect == 'all' %}
-                                                {{ currency.name }} <br class="d-block d-sm-none" />({{ currency.symbol }})
-                                            {% else %}
-                                                {{ currency[currencyFormatSelect] }}
-                                            {% endif %}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
+<div class="container page-header">
 
         <shop-country-settings
                 country-flag-prefix="flag-icon-"
@@ -129,6 +95,7 @@
                                 </ul>
                             </div>
                         </div>
+                        
                         <div class="col-12 col-lg-6">
                             <div class="shipping-settings">
                                 <div class="list-title">
@@ -138,9 +105,9 @@
                                 <shipping-country-select :disable-input="{{ services.template.isCheckout() | json_data() }}"></shipping-country-select>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </shop-country-settings>
-    </div>
 </div>
