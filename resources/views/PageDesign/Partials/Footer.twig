@@ -21,8 +21,8 @@
     <div class="container footer">          
 
         {% set cat = services.category.get(config('Ceres.global.category.legal_disclosure')) %}
-        <div class="copyright text-center my-3">
-            <div class="static-link-list">
+        <div class="link-list-wrapper">
+            <div class="link-list">
                 {% autoescape false %}
                     <a href="{{ urls.cancellationRights }}">{{ trans("Ceres::Template.footerCancellationRight", {"hyphen": "&shy;"}) }}</a>
                     {% if config("Ceres.footer.cancellation_use_pdf") == "true" %}
@@ -37,6 +37,21 @@
                         <a href="{{ urls.contact }}">{{ trans("Ceres::Template.footerContact") }}</a>
                     {% endif %}
                 {% endautoescape %}
+            </div>
+            <div class="link-list">
+                                <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
+                    <a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
+                    <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}
+            </div>
+                        <div class="link-list">
+                                <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
+                    <a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
+                    <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}
+            </div>
+                        <div class="link-list">
+                                <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
+                    <a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
+                    <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}
             </div>
         </div>
         
