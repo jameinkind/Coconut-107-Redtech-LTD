@@ -1,6 +1,7 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 <header id="page-header" class="top-bar">
+   <div class="header-wrapper">
         <div class="container">
           
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
@@ -91,6 +92,7 @@
                     {% endif %}
                     
                 </ul>
+            </div>
             </div>
         {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
 </header>
