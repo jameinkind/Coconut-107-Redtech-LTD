@@ -34,6 +34,18 @@
                             <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ showNetPrices | json_encode }}"></basket-preview>
                         {% endif %}
                     </li>
+                     <li class="list-inline-item control-search">
+                        <a class="anicon anicon-search-xcross"
+                           aria-label="toggle search"
+                           data-toggle="collapse"
+                           href="#searchBox"
+                           aria-expanded="false"
+                           aria-controls="searchBox"
+                           data-parent="#controlsList">
+                            <span class="anicon-search-item" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    
                     <li class="list-inline-item control-user">
                         <user-login-handler>
                             <a data-toggle="modal">
