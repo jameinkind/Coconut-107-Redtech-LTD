@@ -14,6 +14,8 @@
                         <img alt="{{ companyName }}" src="{{ plugin_path('Ceres') }}/{{ companyLogo }}" class="img-fluid" />
                     {% endif %}
                 </a>
+                
+                <a href="" class="btn">Händler-Login</a>
 
                 <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
                     &#9776;
@@ -28,6 +30,12 @@
                     {# includeCached('Ceres::PageDesign.Partials.Header.NavigationList.twig') #}
                     {% include "Ceres::PageDesign.Partials.Header.NavigationList" %}
                 {% endif %}
+                <ul class="static-nav-list">
+                <li><a href="">Angebote</a></li>     
+                <li><a href="">Service</a></li>     
+                <li><a href="">Tarifwelt</a></li>    
+                <li><a href="">B2B</a></li>   
+                </ul>
             </div>
 
         </div>
