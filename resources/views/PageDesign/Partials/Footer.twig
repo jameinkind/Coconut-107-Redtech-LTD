@@ -9,9 +9,10 @@ o{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 {% set footerContainer = LayoutContainer.show("Ceres::Footer") | trim %}
 
 <div class="shipping-payment">
-                        <div class="container">
+  <div class="container">
     <img src="https://cdn02.plentymarkets.com/zj90a4jbte75/frontend/payment-shipping.jpg" alt="Versand und Zahlungsanbieter">
-</div></div>
+  </div>
+</div>
 
 <div class="footer">
 
@@ -27,6 +28,7 @@ o{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
         {% set cat = services.category.get(config('Ceres.global.category.legal_disclosure')) %}
         <div class="link-list-wrapper">
+        
             <div class="link-list">
                 {% autoescape false %}
                     <a href="{{ urls.cancellationRights }}">{{ trans("Ceres::Template.footerCancellationRight", {"hyphen": "&shy;"}) }}</a>
@@ -40,6 +42,7 @@ o{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
                     {% endif %}
                 {% endautoescape %}
             </div>
+            
             <div class="link-list">
                 {% autoescape false %}
                     <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
@@ -47,20 +50,23 @@ o{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
                     <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}</a>
                 {% endautoescape %}
             </div>
-                        <div class="link-list">
- <a href="#">Mein Konto</a>
-  <a href="#">Mein Warenkorb</a>
-   <a href="#">Meine Wunschliste</a>
+            
+            <div class="link-list">
+              <a href="#">Mein Konto</a>
+              <a href="#">Mein Warenkorb</a>
+              <a href="#">Meine Wunschliste</a>
             </div>
-                        <div class="link-list ">
-
-<img src="https://cdn02.plentymarkets.com/zj90a4jbte75/frontend/seals.jpg" alt="Sicherheit beim Einkaufen">
+            
+            <div class="link-list ">
+              <img src="https://cdn02.plentymarkets.com/zj90a4jbte75/frontend/seals.jpg" alt="Sicherheit beim Einkaufen">
             </div>
+            
             <div class="clear"></div>
+            
         </div>
        
 
-</div>
+</div></div>
 
         <div class="copyright">
         <div class="container">
