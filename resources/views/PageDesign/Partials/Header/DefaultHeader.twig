@@ -1,6 +1,6 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
-<header id="page-header" class="top-bar fixed-top">
+<header id="page-header" class="top-bar">
 <div class="header-wrapper">
         <div class="container">
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
@@ -33,19 +33,7 @@
                         {% if config("Ceres.basket.preview_type") != "right" %}
                             <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ showNetPrices | json_encode }}"></basket-preview>
                         {% endif %}
-                    </li>
-                     <li class="list-inline-item control-search">
-                        <a class="anicon anicon-search-xcross"
-                           aria-label="toggle search"
-                           data-toggle="collapse"
-                           href="#searchBox"
-                           aria-expanded="false"
-                           aria-controls="searchBox"
-                           data-parent="#controlsList">
-                            <span class="anicon-search-item" aria-hidden="true"></span>
-                        </a>
-                    </li>
-                    
+                    </li>                    
                     <li class="list-inline-item control-user">
                         <user-login-handler>
                             <a data-toggle="modal">
@@ -56,22 +44,10 @@
                             </a>
                         </user-login-handler>
                     </li>
-
-
                 </ul>
             </div>
             </div>
         {% include "CeresCoconut::PageDesign.Partials.Header.Navigation" %}
-        
-        <div id="searchBox" class="cmp cmp-search-box collapse">
-            {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
-            {% if overrideSearchBar | trim is empty %}
-                <item-search template="#vue-item-search"></item-search>
-            {% else %}
-                {{ overrideSearchBar | raw }}
-            {% endif %}
-        </div>
-        
 </header>
 
 <!-- breadcrumb -->
@@ -80,7 +56,7 @@
 {% endif %}
 
 <div class="container-max page-header">
-    <div class="row">
+
         <div id="searchBox" class="cmp cmp-search-box collapse">
             {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
             {% if overrideSearchBar | trim is empty %}
@@ -90,35 +66,7 @@
             {% endif %}
         </div>
 
-        {% if enableCurrencySelect == "true" %}
-            <div id="currencySelect" class="cmp cmp-currency-select collapse">
-                <div class="container-max">
-                    <div class="row py-3">
-
-                        <div class="currency-list col-12">
-                            <div class="list-title">
-                                <strong>{{ trans("Ceres::Template.headerCurrency") }}</strong>
-                                <hr>
-                            </div>
-                            <ul class="text-center text-sm-left">
-                                {% for currency in services.checkout.getCurrencyList() if currency.name in activeCurrencies or activeCurrencies[0] == 'all' or currency.name == services.checkout.getCurrencyData().name %}
-                                    <li{% if currency.name == services.checkout.getCurrencyData().name %} class="active"{% endif %}>
-                                        <a href="{{ queryString({"currency": currency.name}) }}" rel="nofollow">
-                                            {% if currencyFormatSelect == 'all' %}
-                                                {{ currency.name }} <br class="d-block d-sm-none" />({{ currency.symbol }})
-                                            {% else %}
-                                                {{ currency[currencyFormatSelect] }}
-                                            {% endif %}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
-
+        
         <shop-country-settings
                 country-flag-prefix="flag-icon-"
                 :shipping-countries="{{ services.country.getActiveCountriesList() | filterFields(['id','currLangName', 'isoCode2', 'states.id', 'states.name']) | json_encode }}"
@@ -126,12 +74,12 @@
             <div id="countrySettings" class="cmp cmp-country-settings collapse">
                 <div class="container-max">
                     <div class="row py-3">
+                    
                         <div class="col-12 col-lg-6">
-
                             <div class="language-settings">
+                            
                                 <div class="list-title">
                                     <strong>{{ trans("Ceres::Template.headerSelectLanguage") }}</strong>
-                                    <hr>
                                 </div>
 
                                 {% set languageList = services.webstoreConfig.getActiveLanguageList() %}
@@ -146,19 +94,20 @@
                                         </li>
                                     {% endfor %}
                                 </ul>
+                                
                             </div>
                         </div>
+                        
                         <div class="col-12 col-lg-6">
                             <div class="shipping-settings">
                                 <div class="list-title">
                                     <strong>{{ trans("Ceres::Template.headerSelectShippingCountry") }}</strong>
-                                    <hr>
                                 </div>
                                 <shipping-country-select :disable-input="{{ services.template.isCheckout() | json_encode() }}"></shipping-country-select>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </shop-country-settings>
-    </div>
