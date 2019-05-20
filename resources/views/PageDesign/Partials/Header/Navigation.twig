@@ -16,6 +16,15 @@
                 </a>
                 
                 <a href="" class="btn">Händler-Login</a>
+                
+                        <div id="searchBox" class="cmp cmp-search-box">
+            {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
+            {% if overrideSearchBar | trim is empty %}
+                <item-search template="#vue-item-search"></item-search>
+            {% else %}
+                {{ overrideSearchBar | raw }}
+            {% endif %}
+        </div>
 
                 <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
                     &#9776;
