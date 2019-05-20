@@ -32,16 +32,7 @@
                             <span class="anicon-search-item" aria-hidden="true"></span>
                         </a>
                     </li>
-                    {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
-                        <li class="list-inline-item control-wish-list">
-                            <wish-list-count>
-                                <a>
-                                    <span class="badge-right">0</span>
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                </a>
-                            </wish-list-count>
-                        </li>
-                    {% endif %}
+
                     <li class="list-inline-item control-basket">
                         <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                             {% if config("Ceres.header.basket_values") != "sum" %}
@@ -74,23 +65,7 @@
                         </user-login-handler>
                     </li>
                     
-                    
-                    
 
-
-                    {% if enableCurrencySelect == "true" %}
-                        <li class="list-inline-item dropdown control-languages">
-                            <a class=""
-                               data-toggle="collapse"
-                               href="#currencySelect"
-                               aria-expanded="false"
-                               aria-controls="currencySelect"
-                               data-parent="#controlsList">
-                                <span>{{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
-                            </a>
-                        </li>
-                    {% endif %}
-                    
                 </ul>
             </div>
             </div>
@@ -102,7 +77,7 @@
     {% include "Ceres::PageDesign.Partials.Header.Breadcrumb" %}
 {% endif %}
 
-<div class="container-max page-header">
+<div class="container page-header">
     <div class="row">
         <div id="searchBox" class="cmp cmp-search-box collapse">
             {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
@@ -115,7 +90,7 @@
 
         {% if enableCurrencySelect == "true" %}
             <div id="currencySelect" class="cmp cmp-currency-select collapse">
-                <div class="container-max">
+                <div class="container">
                     <div class="row py-3">
 
                         <div class="currency-list col-12">
@@ -147,7 +122,7 @@
                 :shipping-countries="{{ services.country.getActiveCountriesList() | filterFields(['id','currLangName', 'isoCode2', 'states.id', 'states.name']) | json_encode }}"
                 :shipping-country-id="{{ services.checkout.getShippingCountryId }}">
             <div id="countrySettings" class="cmp cmp-country-settings collapse">
-                <div class="container-max">
+                <div class="container">
                     <div class="row py-3">
                         <div class="col-12 col-lg-6">
 
