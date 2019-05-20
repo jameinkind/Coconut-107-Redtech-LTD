@@ -1,4 +1,4 @@
-{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+o{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set numberOfCols = config('Ceres.footer.number_of_cols') %}
 {% set colSize = (12 / (numberOfCols + 1)) %}
@@ -35,23 +35,22 @@
                     {% else %}
                         <a href="{{ urls.cancellationForm }}">{{ trans("Ceres::Template.footerCancellationForm", {"hyphen": "&shy;"}) }}</a>
                     {% endif %}
-                    <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
-                    <a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
-                    <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}</a>
                     {% if config("Ceres.contact.shop_mail") | length > 0 and config("Ceres.contact.shop_mail") != "your@email.com" %}
                         <a href="{{ urls.contact }}">{{ trans("Ceres::Template.footerContact") }}</a>
                     {% endif %}
                 {% endautoescape %}
             </div>
             <div class="link-list">
-                                <a href="#">Link</a>
- <a href="#">Link</a>
-  <a href="#">Link</a>
+                {% autoescape false %}
+                    <a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
+                    <a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
+                    <a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}</a>
+                {% endautoescape %}
             </div>
                         <div class="link-list">
- <a href="#">Link</a>
-  <a href="#">Link</a>
-   <a href="#">Link</a>
+ <a href="#">Mein Konto</a>
+  <a href="#">Mein Warenkorb</a>
+   <a href="#">Meine Wunschliste</a>
             </div>
                         <div class="link-list ">
 
