@@ -14,10 +14,25 @@
     {% endif %}
 
     <div class="mb-5">
-                            <span class="articlenumber small text-muted">
+                            <span class="articlenumber text-muted">
                                 <b>{{ trans("Ceres::Template.singleItemNumber") }}</b>
                                 <span>${ currentVariation.variation.number }</span>
                             </span>
+                            
+                            
+     <div class="base-price text-muted my-3" v-if="currentVariation.unit">
+        <div>
+            {{ trans("Ceres::Template.singleItemContent") }}
+            <span>${ currentVariation.unit.content | numberFormat }</span>
+            <span>${ currentVariation.unit.names.name }</span>
+        </div>
+        <div v-if="currentVariation.variation.mayShowUnitPrice">
+            {{ trans("Ceres::Template.singleItemUnitPrice") }}
+            <span class="base-price-value">
+                                    ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
+                                </span>
+        </div>
+    </div>
     </div>
 
     <!-- Variation -->
@@ -53,19 +68,7 @@
                             <span :content="currentVariation.prices.default.currency"></span>
                         </span>
 
-    <div class="base-price text-muted my-3" v-if="currentVariation.unit">
-        <div>
-            {{ trans("Ceres::Template.singleItemContent") }}
-            <span>${ currentVariation.unit.content | numberFormat }</span>
-            <span>${ currentVariation.unit.names.name }</span>
-        </div>
-        <div v-if="currentVariation.variation.mayShowUnitPrice">
-            {{ trans("Ceres::Template.singleItemUnitPrice") }}
-            <span class="base-price-value">
-                                    ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
-                                </span>
-        </div>
-    </div>
+    
 
     <slot name="AfterPrice"></slot>
 
