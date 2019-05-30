@@ -67,7 +67,7 @@
                                 </del>
                             </div>
                             <div class="price">
-                                ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") } *
+                                ${ itemData.prices.default.unitPrice.formatted | specialOffer(itemData.prices, "unitPrice", "formatted") }
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     </div>
                     {{ AddToBasket.printVueComponent( "itemData" ) }}
                     <span class="vat small text-muted">
-                        * <span v-if="showNetPrices">{{ trans("Ceres::Template.itemExclVAT") }}</span>
+                        <span v-if="showNetPrices">{{ trans("Ceres::Template.itemExclVAT") }}</span>
                         <span v-else>{{ trans("Ceres::Template.itemInclVAT") }}</span>
                         {{ trans("Ceres::Template.itemExclusive") }}
                         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
