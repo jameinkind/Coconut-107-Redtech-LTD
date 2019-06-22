@@ -15,19 +15,6 @@
                             <i class="flag-icon flag-icon-{{ lang }}"></i>
                         </a>
                     </li>
-                    
-                    {% if enableCurrencySelect == "true" %}
-                        <li class="list-inline-item dropdown control-languages">
-                            <a class=""
-                               data-toggle="collapse"
-                               href="#currencySelect"
-                               aria-expanded="false"
-                               aria-controls="currencySelect"
-                               data-parent="#controlsList">
-                                <span>{{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
-                            </a>
-                        </li>
-                    {% endif %}
                 
                     <li>
                     	<span>Hotline: </span>+49 (0) 6222 - 7730700
@@ -41,7 +28,7 @@
                            aria-expanded="false"
                            aria-controls="searchBox"
                            data-parent="#controlsList">
-                            <span class="anicon-search-item" aria-hidden="true"></span>
+                            <i class="fas fa-search"></i>
                         </a>
                     </li>
                     
@@ -50,7 +37,7 @@
                             <wish-list-count>
                                 <a>
                                     <span class="badge-right">0</span>
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <i class="fas fa-heart"></i>
                                 </a>
                             </wish-list-count>
                         </li>
