@@ -74,11 +74,10 @@
                  </ul>	
             </div>	
             </div>	
-        {% include "CeresCoconut::PageDesign.Partials.Header.Navigation" %}	
 
- </header>	
 
- <!-- breadcrumb -->	
+</header>	
+
 {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}	
     {% include "Ceres::PageDesign.Partials.Header.Breadcrumb" %}	
 {% endif %}	
@@ -94,35 +93,6 @@
                 {{ overrideSearchBar | raw }}	
             {% endif %}	
         </div>	
-
-         {% if enableCurrencySelect == "true" %}	
-            <div id="currencySelect" class="cmp cmp-currency-select collapse">	
-                <div class="container">	
-                    <div class="row py-3">	
-
-                         <div class="currency-list col-12">	
-                            <div class="list-title">	
-                                <strong>{{ trans("Ceres::Template.headerCurrency") }}</strong>	
-                                <hr>	
-                            </div>	
-                            <ul class="text-center text-sm-left">	
-                                {% for currency in services.checkout.getCurrencyList() if currency.name in activeCurrencies or activeCurrencies[0] == 'all' or currency.name == services.checkout.getCurrencyData().name %}	
-                                    <li{% if currency.name == services.checkout.getCurrencyData().name %} class="active"{% endif %}>	
-                                        <a href="{{ queryString({"currency": currency.name}) }}" rel="nofollow">	
-                                            {% if currencyFormatSelect == 'all' %}	
-                                                {{ currency.name }} <br class="d-block d-sm-none" />({{ currency.symbol }})	
-                                            {% else %}	
-                                                {{ currency[currencyFormatSelect] }}	
-                                            {% endif %}	
-                                        </a>	
-                                    </li>	
-                                {% endfor %}	
-                            </ul>	
-                        </div>	
-                    </div>	
-                </div>	
-            </div>	
-        {% endif %}	
 
          <shop-country-settings	
                 country-flag-prefix="flag-icon-"	
