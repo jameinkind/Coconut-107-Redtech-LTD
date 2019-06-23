@@ -77,14 +77,13 @@
                     
                 </ul>
             </div>
+            <div class="search-wrapper">
+    <item-search template="#vue-item-search"></item-search>
+</div>
         </div>
         {% include "CeresCoconut::PageDesign.Partials.Header.Navigation" %}
     </div>
 </header>
-
-<div class="search-wrapper">
-    <item-search template="#vue-item-search"></item-search>
-</div>
 
 <!-- breadcrumb -->
 {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
