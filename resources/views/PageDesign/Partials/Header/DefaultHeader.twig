@@ -46,7 +46,7 @@
                     <li class="list-inline-item control-basket">
                         <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                             {% if config("Ceres.header.basket_values") != "sum" %}
-                                <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                                <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span> Test: {{ trans(“CeresCoconut::Template.basketlabel”) }}
                             {% endif %}
 
                             <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fa fa-refresh fa-spin" class="fa fa-shopping-cart" aria-hidden="true"></i>
