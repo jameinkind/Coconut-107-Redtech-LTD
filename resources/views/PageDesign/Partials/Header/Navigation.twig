@@ -15,9 +15,11 @@
                     {% endif %}
                 </a>
            
-           {% if username() %}1<a href="/b2b" class="btn">{{ trans("CeresCoconut::Template.haendlerbutton") }}</a>{% else %} 
+           {% if client.id > 0 %}1<a href="/b2b" class="btn">{{ trans("CeresCoconut::Template.haendlerbutton") }}</a>{% else %} 
                 2<a href="/b2b" class="btn">{{ trans("CeresCoconut::Template.haendlerbutton") }}</a>
 {% endif %}  
+
+<div v-if="client.id > 0">TEST</div>
 
                 <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
                     &#9776;
