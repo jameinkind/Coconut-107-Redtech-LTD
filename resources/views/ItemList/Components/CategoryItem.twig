@@ -83,6 +83,11 @@
                         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
                     </span>
                     {{ AddToBasket.printVueComponent( "itemData", true ) }}
+                    
+                    
+                    
+                     <a :href="itemData | itemURL" class="btn productlist">Produktansehen-Test</a>
+                    
                 </div>
             </slot>
             <!-- ./ITEM DETAILS  -->
