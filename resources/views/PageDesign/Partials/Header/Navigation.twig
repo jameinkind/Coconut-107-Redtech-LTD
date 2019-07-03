@@ -17,8 +17,8 @@
                 </a>
            
            
-            {% if customerClass == 0 %} 
-           <a href="/b2b" class="btn" title="{{ trans("CeresCoconut::Template.haendlerbutton") }}">{{ trans("CeresCoconut::Template.haendlerbutton") }}</a>
+            {% if customerClass == 0 %}1{% else %}2{% endif %}
+           <a href="/b2b" class="btn" title="{ trans("CeresCoconut::Template.haendlerbutton") }}">{{ trans("CeresCoconut::Template.haendlerbutton") }}</a>
 {% endif %}
                 <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
                     &#9776;
