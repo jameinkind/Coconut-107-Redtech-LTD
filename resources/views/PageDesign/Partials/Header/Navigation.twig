@@ -3,6 +3,7 @@
 {% set showHeaderNavBar = config("Ceres.header.show_navbars") %}
 {% set companyName  = trans("Ceres::Template.headerCompanyName") %}
 {% set useMegaMenu  = config("Ceres.header.megamenu_levels") > 1 %}
+{% set customerClass = services.customer.getContactClassId() %}
 
 <nav class="navbar{% if useMegaMenu %} megamenu{%endif%}">
     <div class="container">
@@ -15,8 +16,10 @@
                     {% endif %}
                 </a>
            
+           
+            {% if customerClass < 1 %} 
            <a href="/b2b" class="btn" title="{{ trans("CeresCoconut::Template.haendlerbutton") }}">{{ trans("CeresCoconut::Template.haendlerbutton") }}</a>
-
+{% endif %}
                 <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
                     &#9776;
                 </button>
