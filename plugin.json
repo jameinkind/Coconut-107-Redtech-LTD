@@ -12,21 +12,21 @@
     "require"           :   {
                                 "Ceres":">= 3.0.0"
                             },
-    "serviceProvider"   :   "CeresCoconutLTD\\Providers\\CeresCoconutServiceProvider",
+    "serviceProvider"   :   "CeresCoconut\\Providers\\CeresCoconutServiceProvider",
     "dataProviders"     :
     [
         {
-            "key"           :"CeresCoconutLTD\\Containers\\CeresCoconutContainer",
+            "key"           :"CeresCoconut\\Containers\\CeresCoconutContainer",
             "name"          :"Stylesheet",
             "description"   :"Add changes to the CSS file"
         },
         {
-            "key"           :"CeresCoconutLTD\\Containers\\CeresCoconutItemListContainer1",
+            "key"           :"CeresCoconut\\Containers\\CeresCoconutItemListContainer1",
             "name"          :"First item list",
             "description"   :"Display a configurable list of items in your online store"
         },
         {
-            "key"           :"CeresCoconutLTD\\Containers\\CeresCoconutItemListContainer2",
+            "key"           :"CeresCoconut\\Containers\\CeresCoconutItemListContainer2",
             "name"          :"Second item list",
             "description"   :"Display a configurable list of items in your online store"
         },
