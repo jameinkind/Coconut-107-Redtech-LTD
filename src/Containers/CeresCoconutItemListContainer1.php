@@ -1,6 +1,6 @@
 <?php
 
-namespace CeresCoconut\Containers;
+namespace CeresCoconutLTD\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
