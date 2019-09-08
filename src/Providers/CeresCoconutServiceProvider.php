@@ -1,6 +1,6 @@
 <?php
 
-namespace CeresCoconut\Providers;
+namespace CeresCoconutLTD\Providers;
 
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
